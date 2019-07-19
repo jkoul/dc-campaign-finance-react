@@ -1,0 +1,27 @@
+{
+  "name": "dc-campaign-finance-react",
+  "version": "1.0.0",
+  "description": "Who Funds DC Candidates app - React &amp; Next.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkoul/dc-campaign-finance-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkoul/dc-campaign-finance-react/issues"
+  },
+  "homepage": "https://github.com/jkoul/dc-campaign-finance-react#readme",
+  "dependencies": {
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
