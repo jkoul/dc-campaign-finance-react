@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import getElectionYears from '../lib/reducers/getElectionYears'
 import Select from 'react-select'
 import sortRaces from '../lib/reducers/sortRaces';
+import getRaceCandidates from '../lib/reducers/getRaceCandidates'
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -71,9 +72,20 @@ const IndexFilters = props => {
           <Paper>
             <h2>Races in {activeYear}</h2>
             <div className="races-list">
-              {activeRaces && activeRaces.length ? activeRaces.map(race => (
-                <h3 key={race.raceId}>{race.raceTypeDisplay}</h3>
-              )) : <div>No Races to Display</div>
+              {activeRaces && activeRaces.length ? activeRaces.map(race => {
+                race.candidates = getRaceCandidates(race,allCommittees)
+                return (
+                  <div key={race.raceId}>
+                    <h3>{race.raceTypeDisplay}</h3>
+                    <h4>Candidates</h4>
+                    <ul>
+                      { race.candidates.map(candidate =>
+                        <li key={candidate}>{candidate}</li>
+                      )}
+                    </ul>
+                  </div>
+                )
+              }) : <div>Choose one or more races...</div>
               }
             </div>
           </Paper>
